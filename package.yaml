@@ -1,0 +1,10 @@
+---
+author: ishiduca@gmail.com
+description: Tiny event emitter of Browser
+keywords:
+  - events
+  - eventemitter
+main: ./evem-min
+name: evem-min
+version: 0.0.1
+licence: MIT

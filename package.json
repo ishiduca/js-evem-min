@@ -1,0 +1,13 @@
+{
+   "keywords" : [
+      "events",
+      "eventemitter"
+   ],
+   "licence" : "MIT",
+   "version" : "0.0.1",
+   "name" : "evem-min",
+   "author" : "ishiduca@gmail.com",
+   "description" : "Tiny event emitter of Browser",
+   "main" : "./evem-min"
+}
+
