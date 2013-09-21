@@ -4,7 +4,7 @@ Tiny event emitter of Browser
 
 ## synopsis
 
-``js
+````js
 <script src="path/to/evem-min.js"></script>
 var timer = Object.create(emitter, {
     constructor: {
@@ -36,7 +36,7 @@ var timer = Object.create(emitter, {
 timer.on('foo', function () { console.log(timer.limit) })
 
 timer.emit('foo') // 10
-``
+````
 
 
 ### method
