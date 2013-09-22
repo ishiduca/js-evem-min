@@ -32,7 +32,7 @@
             is(timer.constructor, Timer, 'timer.constructor === Timer')    
         }
 
-        QUnit.module('inherits')
+        QUnit.module('inherits use "new" or "Object.create"')
         test('use "new"', function () {
             var Timer = function (limit) {
                 emitter.constructor.call(this)
@@ -55,10 +55,9 @@
                 constructor: {
                     value: function (limit) {
                         this.limit = limit
-                        return emitter.constructor.call(this)
+                        emitter.constructor.call(this)
+						return this
                     }
-                  , enumerable: false
-                  , writable: false
                 }
             })
 
