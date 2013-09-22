@@ -39,9 +39,11 @@
 
 
     if (isNodeJS) {
-        module.exports = emitter
+		module.exports = emitter
+		module.exports.constructor.prototype = module.exports
     } else {
         global.emitter = emitter
+		global.emitter.constructor.prototype = emitter
     }
 
 })(this.self || global)
