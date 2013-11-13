@@ -21,6 +21,6 @@
     "run-phantom.js",
     ".npm*",
     ".git*",
-    "pacakge.yaml"
+    "package.yaml"
   ]
 }
