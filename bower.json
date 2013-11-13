@@ -1,0 +1,26 @@
+{
+  "name": "evem-min",
+  "version": "0.1.1",
+  "homepage": "https://github.com/ishiduca/js-evem-min",
+  "authors": [
+    "ishiduca <ishiduca@gmail.com>"
+  ],
+  "description": "Tiny event emitter of Browser",
+  "main": "./evem-min.js",
+  "keywords": [
+    "events",
+    "eventemitter"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "t",
+    "test.sh",
+    "run-phantom.js",
+    ".npm*",
+    ".git*",
+    "pacakge.yaml"
+  ]
+}
