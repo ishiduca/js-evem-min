@@ -18,8 +18,6 @@
     }
 
     function subtest (QUnit, emitter) {
-        var like = QUnit.deepEqual
-
         function instance () {
             var F = function () { this.constructor.call(this) }
             F.prototype = emitter
@@ -32,7 +30,7 @@
             ok(em, 'exists em')
             ok(em.emit, 'exists em.emit')
             ok(em.constructor, 'exists em.constructor')
-            like(em.evs, {}, 'em.evs like "{}"')
+            deepEqual(em.evs, {}, 'em.evs deepEqual "{}"')
         })
 
         test('var em = instanceFunction(emitter)', function () {
@@ -40,7 +38,7 @@
             ok(em, 'exists em')
             ok(em.emit, 'exists em.emit')
             ok(em.constructor, 'exists em.constructor')
-            like(em.evs, {}, 'em.evs like "{}"')
+            deepEqual(em.evs, {}, 'em.evs deepEqual "{}"')
         })
 
         QUnit.module('.emit')
@@ -140,7 +138,7 @@
 
             em.emit('ev', -1, 0, 1)
 
-            like(res, [
+            deepEqual(res, [
                 {args: [ -1, 0, 1 ], arglen: 3, count: 0}
               , {args: [ -1, 0, 1 ], arglen: 3, count: 1}
               , {args: [ -1, 0, 1 ], arglen: 3, count: 2}
@@ -163,7 +161,7 @@
             em.emit('ev', 1, 2)
             em.emit('ev', 1, 2, 3)
 
-            like(res, [ 1, 3, 6 ])
+            deepEqual(res, [ 1, 3, 6 ])
         })
 
         QUnit.module('.once')
@@ -193,7 +191,7 @@
             em.emit('ev', 1, 2, 3)
             em.emit('ev', -1, -2, -3)
 
-            like(res, [
+            deepEqual(res, [
                 {args: [ 1, 2, 3 ], count: 0}
               , {args: [ 1, 2, 3 ], count: 1}
               , {args: [ 1, 2, 3 ], count: 2}

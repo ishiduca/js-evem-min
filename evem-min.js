@@ -1,4 +1,4 @@
-(function (global) {
+;(function (global) {
     'use strict'
 
     var isBrowser = !! global.self
@@ -33,7 +33,8 @@
         return flg
     }
     emitter.off = emitter.removeListener = function (name, listener) {
-        this.evs[name] && (this.evs[name][ this.evs[name].indexOf(listener) ] = null)
+        //this.evs[name] && (this.evs[name][ this.evs[name].indexOf(listener) ] = null)
+        this.evs[name] && (this.evs[name][ indexOf(this.evs[name], listener) ] = null)
         return this
     }
 
@@ -47,3 +48,14 @@
     }
 
 })(this.self || global)
+
+function indexOf (arry, search) {
+    if (typeof arry.indexOf === 'function') {
+        return arry.indexOf(search)
+    }
+
+    for (var i = 0, len = arry.length; i < len; i++) {
+        if (arry[i] === search) return i
+    }
+    return -1
+}
