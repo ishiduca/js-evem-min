@@ -37,6 +37,19 @@
         this.evs[name] && (this.evs[name][ indexOf(this.evs[name], listener) ] = null)
         return this
     }
+    emitter.mixin = function (o) {
+        var m = ['on', 'addListener', 'off', 'removeListener', 'once', 'emit']
+        for (var i = 0, len = m.length; i < len; i++) {
+            o[m[i]] = this[m[i]]
+        }
+        this.constructor.call(o)
+    }
+    emitter.inherits = function (Cnstrctr) {
+        var F = function () {}
+        F.prototype = this
+        Cnstrctr.prototype = new F
+        Cnstrctr.prototype.constructor = Cnstrctr
+    }
 
 
     if (isNodeJS) {
